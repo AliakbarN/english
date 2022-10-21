@@ -1,66 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <%- include ("../partials/header.ejs") %>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng.</title>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/stylesheets/main.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+* {
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+}
+button {
+  margin: 20px;
+  outline: none;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+.btn-11 {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 40vw;
+  margin-top: 100px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+.btn-11:hover {
+   background: #000;
+  color: #fff;
+}
+.btn-11:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn-11:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+@keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
+.container {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+    .btn-11 {
+        margin-top: 250px;
+        width: 80vw;
+    }
+}
+@media screen and (max-width: 992px) {
+    .nav-item {
+        margin-right: 18px;
+        font-size: 16px;
+        font-weight: 600;
+    };
+    .input-container {
+        margin-top: 200px;
+    }
+}
+.bg-custom {
+    background-color: #6CD4FF;
+}
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 12vh;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .5);
+}
+.navbar-nav {
+    position: absolute;
+    flex-direction: row!important;
+    font-family: sans-serif;
+    font-size: 19px;
+    right: 0px;
+}
+a {
+    color: white!important;
+}
+.nav-item {
+    margin-right: 40px;
+}
+.form-group {
+  width: 100%;
+  text-align: center;
+}
+.form-input {
+  max-width: 80%;
+  margin: auto;
+}
+.text-muted {
+  margin-top: 20px;
+}
+.custom-col {
+  position: absolute;
+  height: 220px;
+  overflow-y: scroll;
+  text-align: start;
+  max-width: 80%;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  border-radius: 10px;
+}
+P {
+  margin: auto;
+}
+.row-custom {
+  border-radius: 5px;
+  transition: .3s;
+}
+.row-custom:hover {
+  background-color: #83739f;
+}
+#notif {
+  position: absolute;
+  width: 70vw;
+  top: 13vh;
+  transition: .4s;
+  font-weight: 700;
+  font-size: 20px;
+}
+.hidden {
+  transform: translateY(-50vh);
+}
+    </style>
 </head>
+</body v-cloak>
+    <nav class="navbar navbar-expand-lg p-2 navbar-light bg-custom">
+        <a class="navbar-brand ml-3" href="/"><h2>Eng.</h2></a>
+        <div class="navbar-nav mr-2">
+            <a class="nav-item nav-link" href="/words">Words</a>
+            <a class="nav-item nav-link" href="/lern">Repeat words</a>
+        </div>
+        </div>
+    </nav>
 
-<body>
-
-  <%- include ("../partials/nav.ejs") %>
-
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/lang-logo.png">
-    </a>
-    <h1>Getting Started on Heroku with Node.js</h1>
-    <p>This is a sample Node application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started on Heroku with Node.js</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" class="alert-link">Getting Started on Heroku with Node.js</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/node-js-getting-started">Heroku Button</a> on the repository.</li>
-
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/node-js-getting-started/blob/main/package.json">package.json</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
+    <div id="notif" class="alert alert-success hidden p-3" role="alert">
+      Default text...
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/node-js-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd node-js-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started on Heroku with Node.js</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
-</div>
 
+    <div class="container d-flex p-2" style="justify-content: center;">
+        <div class="form-group p-4">
+          <input @input="changeInputData('save form', $event)" :value="inputValue.save" type="text" class="form-control form-input p-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter word...">
+          <small id="emailHelp" v-if="isWrongText" class="form-text text-muted">Perhaps you meant :</small>
+          <div class="col custom-col p-4 mt-4" v-if="isWrongText">
+            <div class="row row-custom d-block mt-2 ml-2 p-2" @click="setTextInInput(word)" v-for="word in words">
+              <p>{{ word }}</p>
+            </div>
+          </div>
+        </div>
+        <button class="custom-btn btn-11 d-block" @click.stop.prevent="saveText" style="flex: 1;">Save</button>
+    </div>
 
 </body>
+<script type="module" src="/scripts/main.js"></script>
 </html>
