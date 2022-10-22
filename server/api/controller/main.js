@@ -34,7 +34,6 @@ class mainApiController {
     static async getWords (req, res) {
         try {
             const wordData = await WordService.getAllWords();
-            console.log(wordData[0].createdAt, (new Date(wordData[0].createdAt.getHighBits() * 1000)).getMilliseconds());
 
             if (!wordData) return res.sendStatus(505);
 
