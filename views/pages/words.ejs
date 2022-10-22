@@ -44,16 +44,30 @@
             .li-span-text {
                 overflow-x: scroll;
             }
-        }
-        @media screen and (max-width: 992px) {
             .nav-item {
                 margin-right: 18px;
-                font-size: 16px;
-                font-weight: 600;
+                font-size: 18px;
+                font-weight: 550;
             };
             .input-container {
                 margin-top: 200px;
             };
+            .navbar {
+                height: 9vh;
+            }
+        }
+        @media screen and (max-width: 992px) {
+            .nav-item {
+                margin-right: 18px;
+                font-size: 18px;
+                font-weight: 550;
+            };
+            .input-container {
+                margin-top: 200px;
+            };
+            .navbar {
+                height: 9vh;
+            }
         }
         .bg-custom {
             background-color: #6CD4FF;
@@ -62,7 +76,7 @@
             position: absolute;
             top: 0;
             width: 100vw;
-            height: 12vh;
+            max-height: 12vh;
             box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
         }
         .navbar-nav {
@@ -144,7 +158,7 @@
         <ul class="list-group overflow-auto custom-ul p-3">
             <li class="list-group-item" @click="redirectToTranslatorOrSave(word)" v-for="word in words">
                 <span class="d-inline li-span-text">
-                    <p>{{ word }}</p>
+                    {{ word }}
                 </span>
                 <span class="spn-li mr-2 d-inline">
                     <img @click.stop="editTr(word)" class="mr-2" src="/stylesheets/icons/edit.png" alt="Edit">
