@@ -44,6 +44,9 @@
             .cont-word {
                 overflow-x: scroll;
             }
+            .helper {
+                overflow-x: none;
+            }
             .navbar {
                 height: 9vh;
             }
@@ -96,6 +99,11 @@
             font-size: 19px;
             font-weight: 600;
         }
+        .helper {
+            min-width: 200px;
+            min-height: 40px;
+            overflow-x: none;
+        }
     </style>
 </head>
 <body>
@@ -111,6 +119,9 @@
         <h2 class="mb-4">Get random word</h2>
         <div class="container cont-word p-2 mt-3">
             <p id="p-w">{{ word }}</p>
+        </div>
+        <div :style="styles.helper" @click="showHelper" class="container cont-word helper p-3 m-3">
+            {{ translation }}
         </div>
         <button type="button" @click="getRandomWord" class="btn mt-5 btn-rand btn-outline-success p-2">Random</button>
     </div>

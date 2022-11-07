@@ -184,7 +184,7 @@ P {
 
     <div class="container d-flex p-2" style="justify-content: center;">
         <div class="form-group p-4">
-          <input @input="changeInputData('save form', $event)" :value="inputValue.save" type="text" class="form-control form-input p-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter word...">
+          <input @input="changeInputData('save form', $event)" :value="inputValue.save" v-on:keyup.enter="saveText" type="text" class="form-control form-input p-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter word...">
           <small id="emailHelp" v-if="isWrongText" class="form-text text-muted">Perhaps you meant :</small>
           <div class="col custom-col p-4 mt-4" v-if="isWrongText">
             <div class="row row-custom d-block mt-2 ml-2 p-2" @click="setTextInInput(word)" v-for="word in words">

@@ -31,6 +31,7 @@ createApp({
             canAddWord: false,
             addWordBtnText: 'Add translation',
             headerOfModal: '',
+            title: 'Your saved words :',
             canEdit: false,
             currentWord: '',
             modalWindowPlc: '',
@@ -106,6 +107,7 @@ createApp({
                             request('/api/words')
                                 .then( res => {
                                     this.words = res.res;
+                                    if (this.word.length === 0) this.title = 'No words yet';
                                     console.log(this.words);
                                 })
                         }

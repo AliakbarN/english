@@ -39,6 +39,9 @@ createApp({
                     break;
             }
         },
+        logg () {
+            console.log("hello");
+        },
         async saveText () {
             if (this.isWrongText) return;
             else if (this.inputValue.save === '' || this.inputValue.save === ' ') return;

@@ -154,7 +154,7 @@
       </div>
 
     <div class="container d-flex custom-cont pt-5 p-3">
-        <h3 class="mb-3">Your saved words :</h3>
+        <h3 class="mb-3">{{ title }}</h3>
         <ul class="list-group overflow-auto custom-ul p-3">
             <li class="list-group-item" @click="redirectToTranslatorOrSave(word)" v-for="word in words">
                 <span class="d-inline li-span-text">

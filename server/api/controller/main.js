@@ -38,6 +38,7 @@ class mainApiController {
             if (!wordData) return res.sendStatus(505);
 
             if (req.query['just-words'] == 'true') return res.status(200).json(helper.dataToArr(wordData));
+            if (req.query['for-lern'] == 'true') return res.status(200).json(wordData);
 
             res.status(200).json(helper.convertRes(wordData));
         } catch (e) {
